@@ -11,12 +11,23 @@ export type Place = {
 export const imlandFacts = [
   { label: "Population", value: 3_420_000, suffix: "" },
   { label: "Capital", value: "Nordhavn Prime", suffix: "" },
-  { label: "Main Language", value: "Imlish + Norsk", suffix: "" },
+  { label: "Main Language", value: "Norsk", suffix: "" },
+  { label: "Signature Language", value: "Imlish (Læbli dialect)", suffix: "" },
   { label: "Innovation Index", value: 98, suffix: "/100" },
   { label: "Happiness Level", value: 96, suffix: "/100" }
 ] as const;
 
 export const founders = [
+  {
+    name: "Halvor Nilsen Stenby",
+    role: "Boss • Læbli",
+    avatar: null,
+    socials: {
+      x: "#",
+      github: "#",
+      linkedin: "#"
+    }
+  },
   {
     name: "Astra Nyholm",
     role: "Vision Architect",
@@ -75,14 +86,13 @@ export const foods = [
 
 export const tourismPlaces: Place[] = [
   {
-    id: "fjord-arc",
-    title: "Fjord Arc",
-    region: "West Coast",
-    rating: 4.9,
-    description: "A luminous canyon of water and ice — a natural amphitheater for auroras.",
-    image:
-      "https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=2000&q=80",
-    tags: ["Aurora", "Fjords", "Cruise"]
+    id: "kiwi-storhamar",
+    title: "KIWI Storhamar",
+    region: "Hamar, Norway",
+    rating: 5.0,
+    description: "Лучший магазин для отдыха — всё, что нужно, чтобы перезагрузиться по‑северному.",
+    image: "/assets/kiwi-storhamar.svg",
+    tags: ["Store", "Hamar", "Rest"]
   },
   {
     id: "nordhavn",
@@ -105,6 +115,19 @@ export const tourismPlaces: Place[] = [
     tags: ["Cabins", "Wellness", "Ski"]
   }
 ];
+
+export const habitats = ["Hamar", "Løten", "Brumunddal"] as const;
+
+export const signatureLanguage = {
+  name: "Imlish (Læbli dialect)",
+  notes:
+    "A signature ImLand language layer used in design, signage, and official ceremonies — short words, soft consonants, clean rhythm.",
+  sample: [
+    { imlish: "Læbli kaen.", ru: "Спокойно. Всё под контролем." },
+    { imlish: "Nord lys, ny ro.", ru: "Северный свет, новый покой." },
+    { imlish: "ImLand — kald, men varm.", ru: "ImLand — холодный, но тёплый." }
+  ]
+} as const;
 
 export const galleryImages = [
   "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=2000&q=80",
@@ -140,4 +163,3 @@ export const timeline = [
     description: "Annual winter celebration: music, drones, ice sculptures, and neon folklore."
   }
 ];
-

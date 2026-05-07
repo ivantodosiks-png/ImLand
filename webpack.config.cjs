@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const CopyWebpackPlugin = require("copy-webpack-plugin");
 
 module.exports = {
   entry: path.resolve(__dirname, "src/main.tsx"),
@@ -48,6 +49,9 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, "index.html")
+    }),
+    new CopyWebpackPlugin({
+      patterns: [{ from: path.resolve(__dirname, "public"), to: path.resolve(__dirname, "dist") }]
     })
   ],
   devServer: {
@@ -59,4 +63,3 @@ module.exports = {
   performance: { hints: false },
   stats: "errors-warnings"
 };
-
